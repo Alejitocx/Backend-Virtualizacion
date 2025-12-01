@@ -1,16 +1,11 @@
-import { Router } from "express";
-import {
-    asignarEstudiante,
-    asignarProfesor,
-    listarMateriasEstudiante,
-    listarMateriasProfesor
-} from "../controllers/asignacion.controller.js";
+import { Router } from 'express';
+import { crear, listarEstudiantes, listarProfesores, eliminar } from '../controllers/asignacion.controller.js';
 
 const router = Router();
 
-router.post("/estudiante", asignarEstudiante);
-router.post("/profesor", asignarProfesor);
-router.get("/estudiante/:id", listarMateriasEstudiante);
-router.get("/profesor/:id", listarMateriasProfesor);
+router.post('/', crear);
+router.get('/estudiantes', listarEstudiantes);
+router.get('/profesores', listarProfesores);
+router.delete('/:id', eliminar);
 
 export default router;

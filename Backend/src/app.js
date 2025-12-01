@@ -7,6 +7,7 @@ import materiaRoutes from "./routes/materia.routes.js";
 import asignacionRoutes from "./routes/asignacion.routes.js";
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
